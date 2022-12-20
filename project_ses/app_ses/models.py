@@ -9,7 +9,7 @@ class AppUser(models.Model):
     usertype = models.CharField(max_length=200)
     password = models.CharField(max_length=50)
     def __str__(self):
-        return self.first_name 
+        return self.full_name 
 
     class Meta:
         db_table = "app_users"

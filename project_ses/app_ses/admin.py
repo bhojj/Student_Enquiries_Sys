@@ -9,7 +9,7 @@ class AdminUser(admin.ModelAdmin):
 
 class AdminStudent(admin.ModelAdmin):
     list_display =  ("first_name", "middle_name", "last_name", "email", \
-            "contact", "gender", "blood_group", "academic_level", \
+            "contact", "academic_level", \
             "academic_status", "academic_org", "academic_score",\
             "course", "intake", "shift", "remarks")
     search_fields = ("first_name", "contact", "course",)
@@ -17,6 +17,13 @@ class AdminStudent(admin.ModelAdmin):
 
 
 
-admin.site.register(AppUser)
+admin.site.register(AppUser, AdminUser) 
 admin.site.register(Course)
-admin.site.register(Student)
+admin.site.register(Student, AdminStudent) 
+
+
+admin.site.index_title = "STUDENT ENQUIRY SYSTEM"
+admin.site.site_title = "Admin Panel"
+admin.site.site_header = "Admin Panel"
+
+
