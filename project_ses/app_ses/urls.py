@@ -1,7 +1,7 @@
 
 from django.urls import path
 from . import views
-from .views import(StudentApiView)
+from .views import(StudentApiView, StudentIdApiView)
 
 # urlpatterns = [
 #     path("students/" , views.student_index, name="students.index"),
@@ -26,5 +26,6 @@ path("users/register/", views.user_register, name="users.register"),
 path("users/login/", views.user_login, name="users.login"),
 
 # API urls
-path("api/students", StudentApiView.as_view(), name="student_list"),
+path("api/students/", StudentApiView.as_view()), 
+path("api/students/<int:id>/", StudentIdApiView.as_view()),
 ]
